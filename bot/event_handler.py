@@ -20,7 +20,7 @@ class RtmEventHandler(object):
         if event_type == 'error':
             # error
             self.msg_writer.write_error(event['channel'], json.dumps(event))
-        elif event_type == 'message.im':
+        elif event_type == 'direct_message':
             # message was sent to channel
             self._handle_message(event)
         elif event_type == 'channel_joined':
